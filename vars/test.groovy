@@ -1,3 +1,8 @@
 def call(){
-	echo "test"
+	echo "test call"
+}
+
+def add(){
+	echo "add unction"
+	
 }
