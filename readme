@@ -1,1 +1,41 @@
-Readme text
+This is for shared libraries for Jenkins pipeline
+
+1. Create a repo
+2. Create a vars directory
+3. create <filename>.groovy scripts
+
+Note: call() function is the detault function no need to explicitly call the function from the scripted pipeline
+
+* Need to add the comman library in Jenkins 
+    Configure Shared Libraries in Jenkins (Manage Jenkins -> System -> Global Pipeline Libraries/Global Trusted Pipeline Libraries)
+
+=================================================================================
+In scripted pipeline, need to call like below
+@Library('<reponame>') _
+
+call function, under the steps
+<groovyfilename>()  -> it will consider only call() function. if we want to call other functions
+
+Sample code:
+@Library('comman_libraray') _
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                test()  //it will consider only call function from groovy
+            }
+        }
+         stage('Called comman library') {
+            steps {
+                script{
+                    test()
+                test.add()  //To call the other functions
+                }
+            }
+        }
+    }
+}
