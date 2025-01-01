@@ -4,7 +4,7 @@ This is for shared libraries for Jenkins pipeline
 2. Create a vars directory
 3. create <filename>.groovy scripts
 
-Note: call() function is the detault function no need to explicitly call the function from the scripted pipeline
+Note: call() function is the detault function no need to explicitly call the function from the pipeline
 
 * Need to add the comman library in Jenkins 
     Configure Shared Libraries in Jenkins (Manage Jenkins -> System -> Global Pipeline Libraries/Global Trusted Pipeline Libraries)
